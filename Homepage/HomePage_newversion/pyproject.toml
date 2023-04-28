@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "homepage-newversion"
+version = "0.1.0"
+description = ""
+authors = ["woohyun <woohyun.302@gmail.com>"]
+license = "Woo"
+readme = "README.md"
+packages = [{include = "homepage_newversion"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "^4.1.5"
+beautifulsoup4 = "^4.11.1"
+Pillow = "^9.4.0"
+djangorestframework = "^3.14.0"
+PyJWT = "^2.6.0"
+django-environ = "^0.9.0"
+django-cors-headers = "^3.13.0"
+requests = "^2.28.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

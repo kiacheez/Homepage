@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function Btn({text, onClick}) {
+            console.log(text);
+            return (
+                <button
+                    onClick={onClick}
+                    style={{
+                        backgroundColor: "green",
+                        color: "white",
+                        padding: "5px 20px",
+                        border: 5,
+                        borderRadius: 10
+                    }}>
+                    {text}</button>
+            )
+
+        }
+        const MemorizedBtn = React.memo(Btn); //리액트가 변하지 않는 "continue"를 re-render하는 것을 멈춤
+        function App() {
+            const [value, setValue] = React.useState("Save Changes")
+            const changeValue = () => setValue("Revert Changes")
+            return (
+                <div>
+                    <MemorizedBtn text={value} onClick={changeValue}/>
+                    <MemorizedBtn text="Continue"/>
+                </div>
+            )
+        }
+        ReactDOM.render(<App/>, root);
+    </script>
+
+</html>

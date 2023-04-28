@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+    <script type="text/babel">
+        const root = document.getElementById("root");
+        function Btn({text, fontSize = 15 }) { //* 폰트의 기본 값 정하기
+            return (
+                <button
+                    style={{
+                        backgroundColor: "green",
+                        color: "white",
+                        padding: "5px 20px",
+                        border: 5,
+                        borderRadius: 10,
+                        fontSize
+                    }}>
+                    {text}</button>
+            )
+
+        }
+        Btn.propTypes = {
+            text: PropTypes.string.isRequired,
+            fontSize: PropTypes.number.isRequired,
+        };
+
+        function App() {
+            return (
+                <div>
+                    <Btn text="save" fontSize={18}/>
+                    <Btn text="Continue" fontSize={13} />
+                </div>
+            )
+        }
+        ReactDOM.render(<App/>, root);
+    </script>
+
+</html>

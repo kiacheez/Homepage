@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device=width, initial=scale=1.0">
+        <title>Doc</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        
+    </head>
+    <body>
+        <form class="hidden" id="login-form">
+            <input
+            required
+            maxlength="12"
+            type="text" 
+            placeholder="이름을 입력하시오"/>
+            <input type = "submit" value ="Log In"/>
+        </form>
+        <form id="todo-form">
+            <input type="text" placeholder="Write a to do" required>
+        </form>
+        <ul id="todo-list">
+        </ul>
+        
+        <div id="weather">
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <h1 id= "greeting" class="hidden"></h1>
+        <script src="JS/app.js"></script>
+        <script src="JS/background.js"></script>
+        <script src="JS/todolist.js"></script>
+        <script src="JS/weather.js "></script>
+    </body>
+
+</html>
